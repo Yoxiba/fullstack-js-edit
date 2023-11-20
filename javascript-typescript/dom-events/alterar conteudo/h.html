@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #meuelemento {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 onclick="coloca(this)">JavaScript HTML DOM</h2>
+    <h3>Replace an HTML Element.</h3>
+    <div id="div1">
+      <p id="p1">This is a paragraph.</p>
+      <p id="p2">This is a paragraph.</p>
+      <a></a>
+    </div>
+
+    <ul id="minhalista">
+      <li>item 1</li>
+      <li>Item 2</li>
+    </ul>
+    <button onclick="adicionaritem()">adicionar mais 1</button>
+
+    <ul id="minhalista2">
+      <li onclick="removerItem(this)">Item 1</li>
+      <li onclick="removerItem(this)">Item 2</li>
+      <li onclick="removerItem(this)">Item 3</li>
+      <li onclick="removerItem(this)">Item 4</li>
+    </ul>
+
+    <input type="text" id="meuCampo" oninput="mostraValaor()" />
+    <p id="valorAtual"></p>
+
+    <div
+      id="meuelemento"
+      onmouseover="alterarCor()"
+      onmouseout="restaurarCor()"
+    >
+      Da hover
+    </div>
+
+    <script>
+      function alterarCor() {
+        document.getElementById("meuelemento").style.backgroundColor =
+          "lightcoral";
+      }
+      function restaurarCor() {
+        document.getElementById("meuelemento").style.backgroundColor = "red";
+      }
+      function mostraValaor() {
+        var valorCampo = document.getElementById("meuCampo").value;
+        document.getElementById("valorAtual").innerText =
+          "valor atual: " + valorCampo;
+      }
+
+      function coloca(obj) {
+        obj.innerHTML = "test";
+      }
+      function adicionaritem() {
+        var lisize = document.getElementsByTagName("li").length;
+        var novoItem = document.createElement("li");
+        var textoItem = document.createTextNode(`item ${lisize + 1}`);
+
+        novoItem.appendChild(textoItem);
+        document.getElementById("minhalista").appendChild(novoItem);
+      }
+
+      function removerItem(item) {
+        var lista = document.getElementById("minhalista2");
+        lista.removeChild(item);
+      }
+    </script>
+  </body>
+</html>
