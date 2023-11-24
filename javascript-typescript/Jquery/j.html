@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <p id="troca">ola ola troca-me</p>
+
+    <button id="trocate" onclick="bit()">troca</button>
+
+    <button id="lista" onclick="bit2()">lista</button>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    //var paragrafo = document.getElementById("troca");
+    //function bit() {
+    //paragrafo.textContent = "novo content";
+    // }
+
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#troca").html("novo content");
+      });
+      $("#lista").click(function () {
+        $("ul").append("<li>Appended item</li>");
+      });
+    });
+  </script>
+</html>

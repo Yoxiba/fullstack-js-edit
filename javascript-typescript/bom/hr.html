@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="BotaoUrl" onclick="newclick()">
+      Clique aqui para mudar o link
+    </button>
+
+    <button id="oki" onclick="historic()">hestorico</button>
+
+    <button id="ok" onclick="dika()">teste</button>
+  </body>
+  <script>
+    //1
+    function newclick() {
+      window.location.assign("https://mo-online.com/pt/home/");
+    }
+    //2
+    function historic() {
+      var numerodepaginas = window.history.length;
+      alert("numeros de paginas no historico" + numerodepaginas);
+    }
+    //3
+
+    function acaoaocarregar() {
+      alert("terminado");
+    }
+    window.addEventListener("load", acaoaocarregar);
+    //4
+
+    function dika() {
+      var tempototal = 5000;
+
+      setTimeout(function () {
+        alert("o tempo acabou");
+      }, tempototal);
+    }
+  </script>
+</html>
